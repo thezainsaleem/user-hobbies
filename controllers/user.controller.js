@@ -1,4 +1,5 @@
 const User = require("../models/user.model");
+const Hobby = require("../models/hobby.model");
 
 exports.create = async (req, res) => {
   try{
@@ -45,7 +46,10 @@ exports.update = async (req, res) => {
         {
         name: name,
         hobbies: hobbies
-      });
+        },
+        {
+          new: true
+        });
       res.status(user ? 200 : 404).send(user)
     }
     catch(err){
@@ -112,6 +116,11 @@ exports.delete = async (req, res) => {
 
     try{
       let user = await User.findByIdAndDelete(id);
+      await Hobby.deleteMany({
+        _id: {
+          $in: user.hobbies
+        }
+      })
       if (!user)
         status = 404;
       res.status(status).send(user);

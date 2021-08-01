@@ -23,6 +23,7 @@ app.use(
 );
 
 require("./routes/user.routes")(app);
+require("./routes/user/hobby.routes")(app);
 
 
 app.listen(port, () => {

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate");
-const hobbySchema = require("./schema/hobby.schema.js");
 const Schema = mongoose.Schema;
+let passionLevelValues = ["Low", "Medium", "High", "Very-High"];
 let HobbySchema = new Schema({
   name: {
     type: String,
@@ -22,4 +22,6 @@ let HobbySchema = new Schema({
   timestamps: true
 });
 HobbySchema.plugin(mongoosePaginate);
-module.exports = mongoose.model("Hobby", HobbySchema);
+let hobbyModel = mongoose.model("Hobby", HobbySchema);
+hobbyModel.passionLevelValues = passionLevelValues;
+module.exports = hobbyModel;
