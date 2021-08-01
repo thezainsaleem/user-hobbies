@@ -12,7 +12,7 @@ mongoose.connect(
 );
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
-const port = process.env.PORT || 3003;
+const port = process.env.PORT || 3000;
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(
   bodyParser.urlencoded({
@@ -21,6 +21,9 @@ app.use(
     parameterLimit: 50000,
   })
 );
+
+require("./routes/user.routes")(app);
+
 
 app.listen(port, () => {
   console.log(`Started at localhost:${port}`);
