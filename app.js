@@ -4,7 +4,9 @@ const app = express();
 const mongoose = require('mongoose');
 const swaggerJsDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
-
+if (process.env.ENVIRONMENT!="production"){
+  require('dotenv').config()
+}
 const swaggerOptions = {
   swaggerDefinition: {
     info: {
