@@ -156,7 +156,8 @@ exports.index = async (req, res) => {
 exports.delete = async (req, res) => {
   try{
     let {
-      id
+      id,
+      user_id
     } = req.params;
 
     try{
