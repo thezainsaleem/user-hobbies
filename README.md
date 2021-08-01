@@ -39,3 +39,12 @@ Things you may want to cover:
   /api-docs
   ```
  
+# A Look at package json
+  * chai, chai-http, and mocha for Testing
+  * swagger-jsdoc and swagger-ui-express for documentation
+  * express-validator for request validation
+  * esm and faker for seed data
+  * body-parser and connect-multiparty for body parsing
+  * express as light weight server
+  * nodemon for quickload in dev environment
+  * mongoose and mongoose-paginate to interact with MongoDb
