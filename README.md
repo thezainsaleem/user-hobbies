@@ -9,20 +9,27 @@ Things you may want to cover:
  
  * Configuration
    Make sure to point MONGO_CONNECTION_STRING environment to valid MongoDB connection
-   
+   ```
+    npm install
+   ```
    
 # How to run the test suite
-  ```ruby
+  ```
   npm test
+  ```
+  
+# Loading Seed
+  ```
+  node -r esm seed/userWithHobbies.seed.js
   ```
 
 # Run Dev App
-  ```ruby
+  ```
   npm run devStart
   ```
   
 # Run Production App
-  ```ruby
+  ```
   npm start
   ```
   
