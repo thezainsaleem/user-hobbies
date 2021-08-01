@@ -10,6 +10,7 @@ let HobbySchema = new Schema({
   passionLevel: {
     type: String,
     required: true,
+    enum: passionLevelValues
   },
   year: {
     type: String,
