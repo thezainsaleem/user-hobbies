@@ -21,7 +21,7 @@ exports.create = async (req, res) => {
     }
   }
   catch(e){
-    console.error(e.trace);
+    console.error(e.stack);
     res.status(500).send({
       error: "Internal Error"
     })
@@ -59,7 +59,7 @@ exports.update = async (req, res) => {
     }
   }
   catch(e){
-    console.error(e.trace);
+    console.error(e.stack);
     res.status(500).send({
       error: "Internal Error"
     })
@@ -78,7 +78,7 @@ exports.show = async (req, res) => {
     res.status(user ? 200 : 404).send(user)
   }
   catch(e){
-    console.error(e.trace);
+    console.error(e.stack);
     res.status(500).send({
       error: "Internal Error"
     })
@@ -100,7 +100,7 @@ exports.index = async (req, res) => {
     res.send(users)
   }
   catch(e){
-    console.error(e.trace);
+    console.error(e.stack);
     res.status(500).send({
       error: "Internal Error"
     })
@@ -133,7 +133,7 @@ exports.delete = async (req, res) => {
     }
   }
   catch(e){
-    console.error(e.trace);
+    console.error(e.stack);
     res.status(500).send({
       error: "Internal Error"
     })
