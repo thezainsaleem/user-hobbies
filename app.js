@@ -1,3 +1,4 @@
+/* global process */
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
@@ -18,7 +19,7 @@ const swaggerOptions = {
       server: ["http://localhost:3000"]
     }
   },
-  apis: ['routes/\*.*', 'routes/user/*.js']
+  apis: ['routes/*.*', 'routes/user/*.js']
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);

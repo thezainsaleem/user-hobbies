@@ -1,7 +1,6 @@
 module.exports = (app) => {
-  const User = require("../models/user.model");
   const userController = require("../controllers/user.controller");
-  const {check, param, query, validationResult} = require('express-validator/check');
+  const {check, query, validationResult} = require('express-validator/check');
   var router = require("express").Router();
 
   /**

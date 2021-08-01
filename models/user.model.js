@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const mongoosePaginate = require("mongoose-paginate");
 const Schema = mongoose.Schema;
-const Hobby = require("./hobby.model")
 
 let UserSchema = new Schema(
   {

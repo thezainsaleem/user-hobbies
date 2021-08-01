@@ -1,7 +1,7 @@
 module.exports = (app) => {
   const Hobby = require("../../models/hobby.model");
   const hobbyController = require("../../controllers/user/hobby.controller");
-  const {check, param, query, validationResult} = require('express-validator/check');
+  const {check, query, validationResult} = require('express-validator/check');
   var router = require("express").Router({mergeParams: true});
 
   /**

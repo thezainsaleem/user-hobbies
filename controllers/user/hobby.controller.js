@@ -1,6 +1,5 @@
 const Hobby = require("../../models/hobby.model");
 const User = require("../../models/user.model");
-const constants = require("../constants")
 
 exports.create = async (req, res) => {
   try{
@@ -62,7 +61,6 @@ exports.update = async (req, res) => {
   try{
     let{
       id,
-      user_id
     } = req.params;
 
     let {
