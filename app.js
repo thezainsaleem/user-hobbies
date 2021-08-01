@@ -2,6 +2,26 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 const mongoose = require('mongoose');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerOptions = {
+  swaggerDefinition: {
+    info: {
+      title: 'User Hobbies APIs',
+      description: 'CRUD APIs for users and hobbies',
+      contact: {
+        name: "Zain Saleem"
+      },
+      server: ["http://localhost:3000"]
+    }
+  },
+  apis: ['routes/\*.*', 'routes/user/*.js']
+};
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 mongoose.connect(
   process.env.MONGO_CONNECTION_STRING,
